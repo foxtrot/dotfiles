@@ -242,10 +242,10 @@ set t_Co=256
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
 set splitbelow
 set splitright
-nnoremap <C-A-Right> <C-w>l
-nnoremap <C-A-Left> <C-w>h
-nnoremap <C-A-Up> <C-w>k
-nnoremap <C-A-Down> <C-w>j
+nnoremap <C-S-Right> <C-w>l
+nnoremap <C-S-Left> <C-w>h
+nnoremap <C-S-Up> <C-w>k
+nnoremap <C-S-Down> <C-w>j
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Tabs and Buffers
@@ -262,4 +262,11 @@ nnoremap <C-m> :tabclose<CR>
 " Visual Mode
 "nnoremap <Left> <gv
 "nnoremap <Right> >gv
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Helpers
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""
+cnoreabbrev W w 
+command ViewDiff :w !diff % -
+cnoreabbrev vd ViewDiff
 
