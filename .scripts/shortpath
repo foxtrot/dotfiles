@@ -1,0 +1,16 @@
+shortpath() {
+    dir=${1%/*} && last=${1##*/}
+    res=$(for i in ${dir//\// } ; do echo -n "${i:0:1}/" ; done)
+    #echo "/$res$last"
+    t=$(awk -F"/" '{print NF-1}' <<< ${res})
+    if [[ $t -gt 3 ]]; then
+        # Too long, truncate further
+        res=$(echo "/$res$last" | rev | cut -d'/' -f-3 | rev)
+        echo "$res"
+    else
+        echo "/$res$last"
+    fi
+}
+
+shortpath $1
+
