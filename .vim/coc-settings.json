@@ -1,0 +1,15 @@
+{
+  "codeLens.enable": true,
+  "diagnostic.errorSign": "!",
+  "diagnostic.warningSign": "!",
+  "diagnostic.infoSign": "?",
+  "eslint.filetypes": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact"
+  ],
+  "git.realtimeGutters": true,
+  "git.enableGutters": false
+}
+
