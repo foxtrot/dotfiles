@@ -18,6 +18,9 @@ Plug 'jistr/vim-nerdtree-tabs'
 "" Git Gutter
 Plug 'airblade/vim-gitgutter'
 
+"" Indent Guide
+Plug 'Yggdroot/indentLine'
+
 "" Airline Status Bar, Git
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -39,6 +42,7 @@ set nobackup
 set nowritebackup
 set updatetime=300
 set shortmess+=c
+
 " Use tab for trigger completion with characters ahead and navigate.
 inoremap <silent><expr> <TAB>
       \ pumvisible() ? "\<C-n>" :
@@ -201,6 +205,14 @@ let g:gitgutter_sign_modified_removed = '-'
 let g:gitgutter_set_sign_backgrounds = 1
 au VimEnter * GitGutterEnable
 set signcolumn=auto
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Indentation Guide
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:indentLine_setColors = 1
+let g:indentLine_color_term = 239
+let g:indentLine_char = '|'
+let g:indentLine_enabled = 1
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Airline Status
