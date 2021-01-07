@@ -13,6 +13,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'preservim/nerdtree'
 Plug 'jistr/vim-nerdtree-tabs'
 "Plug 'Xuyuanp/nerdtree-git-plugin'
+"Plug 'nopik/vim-nerdtree-direnter'
 
 "" Git Gutter
 Plug 'airblade/vim-gitgutter'
