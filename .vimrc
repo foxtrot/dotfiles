@@ -8,6 +8,7 @@ call plug#begin('~/.vim/plugged')
 
 "" Code Completion, Linting
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'othree/html5.vim'
 
 "" NerdTREE
 Plug 'preservim/nerdtree'
