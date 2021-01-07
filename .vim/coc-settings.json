@@ -1,19 +1,22 @@
 {
-  "codeLens.enable": true,
-  "diagnostic.errorSign": "!",
-  "diagnostic.warningSign": "!",
-  "diagnostic.infoSign": "?",
-  "eslint.filetypes": [
-    "javascript",
-    "javascriptreact",
-    "typescript",
-    "typescriptreact"
-  ],
-  "git.realtimeGutters": true,
-  "git.enableGutters": false,
-  "python.linting.pylintEnabled": false,
-  "python.linting.pep8Enabled": true,
-  "python.linting.enabled": true,
-  "suggest.snippetIndicator": ""
+    "codeLens.enable": true,
+    "diagnostic.errorSign": "!",
+    "diagnostic.warningSign": "!",
+    "diagnostic.infoSign": "?",
+    "eslint.filetypes": [
+        "javascript",
+        "javascriptreact",
+        "typescript",
+        "typescriptreact"
+    ],
+    "git.realtimeGutters": true,
+    "git.enableGutters": false,
+    "python.linting.pylintEnabled": false,
+    "python.linting.pep8Enabled": true,
+    "python.linting.enabled": true,
+    "coc.preferences.formatOnSaveFiletypes": [
+        "go",
+        "json"
+    ],
+    "suggest.snippetIndicator": ""
 }
-
