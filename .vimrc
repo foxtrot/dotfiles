@@ -271,6 +271,7 @@ nnoremap <C-Right> :tabnext<CR>
 nnoremap <C-Left> :tabprev<CR>
 nnoremap <C-n> :tabnew<CR>
 nnoremap <C-m> :tabclose<CR>
+unmap <CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Text Manipulation
