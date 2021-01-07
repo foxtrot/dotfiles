@@ -10,6 +10,10 @@
     "typescriptreact"
   ],
   "git.realtimeGutters": true,
-  "git.enableGutters": false
+  "git.enableGutters": false,
+  "python.linting.pylintEnabled": false,
+  "python.linting.pep8Enabled": true,
+  "python.linting.enabled": true,
+  "suggest.snippetIndicator": ""
 }
 
