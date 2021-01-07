@@ -214,6 +214,8 @@ let g:indentLine_color_term = 239
 let g:indentLine_char = '|'
 let g:indentLine_enabled = 1
 
+set list listchars=tab:\|\ ,trail:·,extends:»,precedes:«,nbsp:×
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Airline Status
 """""""""""""""""""""""""""""""""""""""""""""""""""""""

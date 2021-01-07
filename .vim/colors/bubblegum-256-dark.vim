@@ -119,7 +119,7 @@ hi SpellRare ctermfg=181 ctermbg=235 cterm=underline guifg=#D7AFAF guibg=#262626
 hi SpellLocal ctermfg=180 ctermbg=235 cterm=underline guifg=#D7AF87 guibg=#262626 gui=underline
 
 " Misc
-hi SpecialKey ctermfg=114 ctermbg=235 cterm=none guifg=#87D787 guibg=#262626 gui=none
+hi SpecialKey ctermfg=239 ctermbg=235 cterm=none guifg=#87D787 guibg=#262626 gui=none
 hi NonText ctermfg=244 ctermbg=235 cterm=none guifg=#808080 guibg=#262626 gui=none
 hi Directory ctermfg=103 ctermbg=235 cterm=none guifg=#8787AF guibg=#262626 gui=none
 hi Title ctermfg=109 cterm=none guifg=#87AFAF gui=none
