@@ -13,8 +13,6 @@ Plug 'othree/html5.vim'
 "" NerdTREE
 Plug 'preservim/nerdtree'
 Plug 'jistr/vim-nerdtree-tabs'
-"Plug 'Xuyuanp/nerdtree-git-plugin'
-"Plug 'nopik/vim-nerdtree-direnter'
 
 "" Git Gutter
 Plug 'airblade/vim-gitgutter'
@@ -61,9 +59,10 @@ if has('nvim')
 else
   inoremap <silent><expr> <c-@> coc#refresh()
 endif
+
 " Make <CR> auto-select the first completion item and notify coc.nvim to
 " format on enter, <cr> could be remapped by other vim plugin
-inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() : "<CR>"
 
 " Use `[g` and `]g` to navigate diagnostics
 " Use `:CocDiagnostics` to get all diagnostics of current buffer in location list.
@@ -178,20 +177,6 @@ nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree")
       \ && b:NERDTree.isTabTree()) | q | endif
 
-" NerdTREE Git Integration
-let g:NERDTreeIndicatorMapCustom = {
-    \ "Modified"  : "✹",
-    \ "Staged"    : "✚",
-    \ "Untracked" : "✭",
-    \ "Renamed"   : "➜",
-    \ "Unmerged"  : "═",
-    \ "Deleted"   : "✖",
-    \ "Dirty"     : "✗",
-    \ "Clean"     : "✔︎",
-    \ 'Ignored'   : '☒',
-    \ "Unknown"   : "?"
-    \ }
-
 " Bind CTRL+/ to Toggle Tree
 nmap <C-_> :NERDTreeTabsToggle<CR>
 
@@ -215,6 +200,7 @@ let g:indentLine_color_term = 239
 let g:indentLine_char = '|'
 let g:indentLine_enabled = 1
 
+set conceallevel=0
 set list listchars=tab:\|\ ,trail:·,extends:»,precedes:«,nbsp:×
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
