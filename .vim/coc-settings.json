@@ -1,4 +1,5 @@
 {
+    "coc.preferences.formatOnType": true,
     "codeLens.enable": true,
     "diagnostic.errorSign": "!",
     "diagnostic.warningSign": "!",
@@ -19,5 +20,5 @@
         "json"
     ],
     "suggest.snippetIndicator": "",
-    "html.suggest.html5": false
+    "html.autoClosingTags": false
 }
