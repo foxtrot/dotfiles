@@ -1,0 +1,1 @@
+git config --global core.hooksPath /home/foxtrot/.git-templates/hooks/
