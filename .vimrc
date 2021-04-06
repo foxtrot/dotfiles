@@ -226,7 +226,7 @@ set number
 syntax on
 colorscheme bubblegum-256-dark
 set numberwidth=5
-set cmdheight=2
+set cmdheight=1
 set linespace=1
 let &t_SI = "\<Esc>[6 q"
 let &t_rR = "\<Esc>[4 q"
