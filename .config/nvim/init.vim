@@ -45,7 +45,7 @@ set nowritebackup
 set updatetime=300
 set shortmess+=c
 
-source ~/.vim/coc.vim
+source ~/.config/nvim/coc.vim
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
 " NerdTREE
@@ -106,7 +106,6 @@ let g:airline_section_warning = '%{airline#util#wrap(airline#extensions#whitespa
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
 set number
 syntax on
-"colorscheme bubblegum-256-dark
 colorscheme dracula
 set numberwidth=5
 set cmdheight=1
