@@ -1,9 +1,14 @@
 {
     "coc.preferences.formatOnType": true,
+    "coc.preferences.jumpCommand": "tab drop",
+    "list.insertMappings": {
+        "<Esc>": "do:exit"
+    },
     "codeLens.enable": true,
     "diagnostic.errorSign": "!",
     "diagnostic.warningSign": "!",
     "diagnostic.infoSign": "?",
+    "diagnostic.messageTarget": "echo",
     "eslint.filetypes": [
         "javascript",
         "javascriptreact",
