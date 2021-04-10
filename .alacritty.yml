@@ -1,6 +1,11 @@
 import:
   - ~/.console/dracula.yml
 
+cursor:
+    style:
+        blinking: Always
+        blink_interval: 500
+        shape: Beam
 font:
   normal:
     family: Meslo LG M
