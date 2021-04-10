@@ -22,7 +22,7 @@ Plug 'Yggdroot/indentLine'
 
 "" Airline Status Bar, Git
 Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
+"Plug 'vim-airline/vim-airline-themes'
 Plug 'tpope/vim-fugitive'
 
 "" Dracula
@@ -34,18 +34,9 @@ Plug 'ctrlpvim/ctrlp.vim'
 "" Color Table
 Plug 'guns/xterm-color-table.vim'
 
+Plug 'jszakmeister/vim-togglecursor'
+
 call plug#end()
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Code Completion and Linting
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"set hidden
-set nobackup
-set nowritebackup
-set updatetime=300
-set shortmess+=c
-
-source ~/.config/nvim/coc.vim
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
 " NerdTREE
@@ -83,6 +74,7 @@ let g:indentLine_enabled = 1
 
 set conceallevel=0
 set list listchars=tab:\|\ ,trail:·,extends:»,precedes:«,nbsp:×
+let g:indentLine_setConceal = 0
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Airline Status
@@ -110,9 +102,6 @@ colorscheme dracula
 set numberwidth=5
 set cmdheight=1
 set linespace=1
-let &t_SI = "\<Esc>[6 q"
-let &t_rR = "\<Esc>[4 q"
-let &t_EI = "\<Esc>[2 q"
 set tabstop=4
 set shiftwidth=4
 set softtabstop=4
@@ -120,6 +109,20 @@ set expandtab
 highlight clear SignColumn
 highlight clear LineNr
 set t_Co=256
+let &t_SI = "\<Esc>[6 q"
+let &t_rR = "\<Esc>[4 q"
+let &t_EI = "\<Esc>[2 q"
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Code Completion and Linting
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"set hidden
+set nobackup
+set nowritebackup
+set updatetime=300
+set shortmess+=c
+
+source ~/.config/nvim/coc.vim
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Splits / Panes

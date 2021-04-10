@@ -109,3 +109,7 @@ nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 " Highlight the symbol and its references when holding the cursor.
 autocmd CursorHold * silent call CocActionAsync('highlight')
 
+" Gutter Colors
+hi! CocErrorSign ctermfg=Red
+hi! CocInfoSign ctermfg=Blue
+hi! CocWarningSign ctermfg=Yellow
