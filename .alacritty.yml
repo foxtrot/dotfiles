@@ -8,18 +8,18 @@ cursor:
         shape: Beam
 font:
   normal:
-    family: Meslo LG M
+    family: Meslo LG M DZ
     style: Regular
 
   bold:
-    family: Meslo LG M
+    family: Meslo LG M DZ
     style: Bold
 
   italic:
-    family: Meslo LG M
+    family: Meslo LG M DZ
     style: Italic
 
-  size: 9
+  size: 5.5
 
   offset:
     x: 0
