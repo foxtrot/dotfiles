@@ -24,4 +24,4 @@ alias gc="git commit"
 alias gd="git diff --word-diff"
 alias gco="git checkout"
 alias gcob="git checkout -b"
-
+alias gp="git push"
