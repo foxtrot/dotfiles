@@ -6,15 +6,7 @@
 [[ $- != *i* ]] && return
 
 # Alias
-alias ls='ls --color=auto'
-alias l='ls'
-alias grep='grep --color=auto'
-alias ip='ip -c'
-alias castmiddle="vlc --no-video-deco --no-embedded-video --screen-fps=60 --screen-top=480 --screen-left=1080 --screen-width=3440 --screen-height=1440 screen://"
-alias castleft="vlc --no-video-deco --no-embedded-video --screen-fps=60 --screen-top=0 --screen-left=0 --screen-width=1080 --screen-height=1920 screen://"
-alias castright="vlc --no-video-deco --no-embedded-video --screen-fps=60 --screen-top=0 --screen-left=4520 --screen-width=1080 --screen-height=1920 screen://"
-alias cb="xclip -selection clipboard"
-alias cat="bat --pager=never"
+source ~/.console/aliases.sh
 
 # Colours
 WHITE="\[$(tput setaf 255)\]"
@@ -59,3 +51,4 @@ if [ -f '/opt/google-cloud-sdk/completion.bash.inc' ]; then . '/opt/google-cloud
 
 export PATH=$PATH:/home/$USER/.scripts/
 
+bash ~/.scripts/welcome.sh
