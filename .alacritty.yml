@@ -8,18 +8,18 @@ cursor:
         shape: Beam
 font:
   normal:
-    family: Meslo LG M DZ
+    family: Iosevka Term
     style: Regular
 
   bold:
-    family: Meslo LG M DZ
+    family: Iosevka Term
     style: Bold
 
   italic:
-    family: Meslo LG M DZ
+    family: Iosevka Term
     style: Italic
 
-  size: 5.5
+  size: 6
 
   offset:
     x: 0
