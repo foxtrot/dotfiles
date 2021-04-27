@@ -22,7 +22,7 @@ SESSIONS=$(tmux ls 2> /dev/null | awk '{print $1}' | sed 's/://' | sed -e ':a' -
 DISTRO=$(cat /etc/os-release | grep "NAME" | head -n1 | sed 's/NAME="//g' | awk '{print $1}')
 
 if [ $DISTRO == "Arch" ]; then
-    LAST_UPGRADE=$(grep -m 1 'full system upgrade' /var/log/pacman.log | tail -n 1 | cut -d ' ' -f 1 | tr -d '[]')
+    LAST_UPGRADE=$(grep -a 'full system upgrade' /var/log/pacman.log | tail -n 1 | cut -d ' ' -f 1 | tr -d '[]')
     T1=$(date +%s -d $LAST_UPGRADE)
     T2=$(date +%s)
     DAYS_SINCE_UPGRADE=$(((T2 - T1) / 86400))
