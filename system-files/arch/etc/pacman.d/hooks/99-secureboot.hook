@@ -1,0 +1,14 @@
+[Trigger]
+Operation = Install
+Operation = Upgrade
+Type = Package
+Target = linux
+Target = linux-hardened
+Target = systemd
+
+[Action]
+Description = Sign Boot Bundle for SecureBoot
+When = PostTransaction
+Exec = /bin/bash "/boot/sign-bundle.sh"
+Depends = sbsigntools
+
