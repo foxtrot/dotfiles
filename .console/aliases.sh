@@ -26,3 +26,10 @@ alias gco="git checkout"
 alias gcob="git checkout -b"
 alias gp="git push"
 alias gsu="git submodule update --init --remote --recursive --force"
+
+# Docker
+dsc() {
+    # Start a specified docker container, attaching the CWD to it and dropping into /bin/bash.
+    # dsc container
+    docker run -it -v $(pwd):/x $1 /bin/bash
+}
