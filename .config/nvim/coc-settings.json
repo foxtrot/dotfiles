@@ -8,14 +8,22 @@
     "diagnostic.messageTarget": "float",
     "git.realtimeGutters": true,
     "git.enableGutters": true,
-    "git.addedSign.text": "+",
+    "git.addedSign.text": "✚",
+    "git.changedSign.text": "●",
+    "git.removedSign.text": "-",
+    "git.topRemovedSign.text": "-",
     "python.linting.pylintEnabled": false,
     "python.linting.pep8Enabled": true,
     "python.linting.enabled": true,
     "coc.preferences.formatOnSaveFiletypes": [
         "go",
         "json",
-        "sh"
+        "sh",
+        "ts",
+        "c",
+        "cpp",
+        "h",
+        "html"
     ],
     "suggest.snippetIndicator": "",
     "html.autoClosingTags": false

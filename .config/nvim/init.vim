@@ -14,9 +14,6 @@ Plug 'othree/html5.vim'
 Plug 'preservim/nerdtree'
 Plug 'jistr/vim-nerdtree-tabs'
 
-"" Git Gutter
-Plug 'airblade/vim-gitgutter'
-
 "" Indent Guide
 Plug 'Yggdroot/indentLine'
 
@@ -51,18 +48,6 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree")
 
 " Bind CTRL+/ to Toggle Tree
 nmap <C-_> :NERDTreeTabsToggle<CR>
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Git Gutter
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:gitgutter_sign_added = '✚'
-let g:gitgutter_sign_modified = '●'
-let g:gitgutter_sign_removed = '-'
-let g:gitgutter_sign_removed_first_line = '-'
-let g:gitgutter_sign_modified_removed = '-'
-let g:gitgutter_set_sign_backgrounds = 1
-au VimEnter * GitGutterEnable
-set signcolumn=auto
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Indentation Guide
@@ -112,6 +97,7 @@ set t_Co=256
 let &t_SI = "\<Esc>[6 q"
 let &t_rR = "\<Esc>[4 q"
 let &t_EI = "\<Esc>[2 q"
+set signcolumn=auto
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Code Completion and Linting
