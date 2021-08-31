@@ -1,8 +1,20 @@
 #!/bin/bash
 
+TOP_LEVEL=$(git rev-parse --show-toplevel)
+
 for file in $(git diff --cached --name-only --diff-filter=ACMRTUXB | grep "\.go")
 do
 	echo "(gofmt) $file"
 	gofmt -w $file
     git add "$file"
 done
+
+if [ -f "$TOP_LEVEL/.clang-format" ]; then
+    for file in $(git diff --cached --name-only --diff-filter=ACMRTUXB | grep "\.c\|\.h\|\.hxx\|\.cpp\|\.cxx")
+    do
+        echo "(clang-format) $file"
+        clang-format -i -style=file "$file"
+        git add "$file"
+    done
+fi
+
