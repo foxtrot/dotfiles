@@ -20,11 +20,10 @@
         "json",
         "sh",
         "ts",
-        "c",
-        "cpp",
-        "h",
-        "html"
+        "h"
     ],
     "suggest.snippetIndicator": "",
-    "html.autoClosingTags": false
+    "signature.preferShownAbove": false,
+    "html.autoClosingTags": false,
+    "suggest.enablePreview": true
 }

@@ -113,3 +113,4 @@ autocmd CursorHold * silent call CocActionAsync('highlight')
 hi! CocErrorSign ctermfg=Red
 hi! CocInfoSign ctermfg=Blue
 hi! CocWarningSign ctermfg=Yellow
+

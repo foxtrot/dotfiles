@@ -2,6 +2,13 @@
 " VIMRC
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Defined Binds
+"
+"
+"
+"
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plug
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
 call plug#begin('~/.vim/plugged')
@@ -31,6 +38,13 @@ Plug 'ctrlpvim/ctrlp.vim'
 "" Color Table
 Plug 'guns/xterm-color-table.vim'
 
+"" Structure View
+Plug 'liuchengxu/vista.vim'
+
+"" Multi Cursor
+Plug 'mg979/vim-visual-multi', {'branch': 'master'}
+
+"" Misc
 Plug 'jszakmeister/vim-togglecursor'
 
 call plug#end()
@@ -136,6 +150,10 @@ unmap <CR>
 " Visual Mode
 "nnoremap <Left> <gv
 "nnoremap <Right> >gv
+" Visual Multi configuration
+let g:VM_maps = {}
+let g:VM_maps["Undo"]      = 'u'
+let g:VM_maps["Redo"]      = '<C-r>'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Helpers
