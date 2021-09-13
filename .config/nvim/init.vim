@@ -46,6 +46,7 @@ Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 
 "" Misc
 Plug 'jszakmeister/vim-togglecursor'
+Plug 'junegunn/rainbow_parentheses.vim'
 
 call plug#end()
 
@@ -98,6 +99,7 @@ let g:airline_section_warning = '%{airline#util#wrap(airline#extensions#whitespa
 set number
 syntax on
 colorscheme dracula
+set termguicolors
 set numberwidth=5
 set cmdheight=1
 set linespace=1
@@ -112,6 +114,8 @@ let &t_SI = "\<Esc>[6 q"
 let &t_rR = "\<Esc>[4 q"
 let &t_EI = "\<Esc>[2 q"
 set signcolumn=auto
+autocmd VimEnter * RainbowParentheses
+let g:rainbow#pairs = [['(', ')'], ['[', ']'], ['{', '}']]
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Code Completion and Linting
