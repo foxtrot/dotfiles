@@ -3,11 +3,18 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Defined Binds
+" gd - Goto Definiton
+" gy - Goto Implementation
+" gi - Show References
+" gr - Show Hint
 "
+" Space-a - Show Diagnostics
+" Space-e - Show Extensions
+" Space-c - Show Commands
+" Space-o - Find Current Symbol in File
+" Space-s - Search for Symbol
 "
-"
-"
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plug
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -79,10 +86,9 @@ let g:indentLine_setConceal = 0
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Airline Status
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:airline_powerline_fonts = 0
-"let g:airline_theme='bubblegum'
+let g:airline_powerline_fonts = 1
 let g:airline_theme='dracula'
-" let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#enabled = 1
 let g:airline_section_a = '%#__accent_bold#%{airline#util#wrap(airline#parts#mode(),0)}%#__restore__#%{airline#util#append(airline#parts#crypt(),0)}%{airline#util#append(airline#parts#paste(),0)}%{airline#util#append(airline#extensions#keymap#status(),0)}%{airline#util#append(airline#parts#spell(),0)}%{airline#util#append("",0)}%{airline#util#append("",0)}%{airline#util#append(airline#parts#iminsert(),0)}'
 let g:airline_section_b = '%{airline#util#wrap(airline#extensions#hunks#get_hunks(),100)}%{airline#util#wrap(airline#extensions#branch#get_head(),80)}'
 let g:airline_section_c = '%<%<%{airline#extensions#fugitiveline#bufname()}%m %#__accent_red#%{airline#util#wrap(airline#parts#readonly(),0)}%#__restore__#%#__accent_bold#%{airline#util#wrap(airline#extensions#coc#get_status(),0)}%#__restore__#'
