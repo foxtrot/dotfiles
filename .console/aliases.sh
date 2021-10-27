@@ -16,9 +16,12 @@ alias castright="vlc --no-video-deco --no-embedded-video --screen-fps=60 --scree
 alias ta="tmux a -t $1"
 alias tl="tmux ls"
 
+# Open
+alias open="xdg-open"
+
 # Git
 alias gs="~/.scripts/git-status-pretty.sh"
-alias gl="git log --pretty=format:\"%C(yellow)%h %ad%Cred%d %Creset%s%Cblue [%cn]\" --decorate --date=short"
+alias gl="git log --pretty=format:'%Cred%h%Creset %C(bold blue)%an%Creset %Cgreen%cr%Creset %s%C(bold red)%d%Creset'"
 alias ga="git add"
 alias gc="git commit"
 alias gd="git diff --word-diff"
@@ -27,9 +30,15 @@ alias gcob="git checkout -b"
 alias gp="git push"
 alias gsu="git submodule update --init --remote --recursive --force"
 
+# Google Cloud
+alias sqlconnect="cd ~ && ./cloud_sql_proxy -instances=hak5-dl:us-central1:download-portal=tcp:5432"
+
 # Docker
 dsc() {
     # Start a specified docker container, attaching the CWD to it and dropping into /bin/bash.
     # dsc container
     docker run -it -v $(pwd):/x $1 /bin/bash
+}
+dscn() {
+    docker run -it --net=bridge -v $(pwd):/x $1 /bin/bash
 }
