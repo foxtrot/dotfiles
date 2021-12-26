@@ -67,6 +67,9 @@ syntax on
 
 let g:tokyonight_style = "night"
 colorscheme tokyonight
+hi! DiffAdd guibg=#1a1b26 guifg=#98be65
+hi! DiffChange guibg=#1a1b26 guifg=#ff8800
+hi! DiffDelete guibg=#1a1b26 guifg=#db4b4b
 
 set termguicolors
 set numberwidth=5
@@ -226,4 +229,4 @@ let g:VM_maps["Redo"]      = '<C-r>'
 cnoreabbrev W w 
 command ViewDiff :w !diff % -
 cnoreabbrev vd ViewDiff
-
+set mouse=a
