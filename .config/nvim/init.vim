@@ -70,6 +70,10 @@ colorscheme tokyonight
 hi! DiffAdd guibg=#1a1b26 guifg=#98be65
 hi! DiffChange guibg=#1a1b26 guifg=#ff8800
 hi! DiffDelete guibg=#1a1b26 guifg=#db4b4b
+hi! CocErrorHighlight gui=underline guisp=#db4b4b
+hi! CocWarningHighlight gui=underline guisp=#ff8800
+hi! CocInfoHighlight gui=underline guisp=#0db9d7
+hi! CocHintHighlight gui=underline guisp=#
 
 set termguicolors
 set numberwidth=5
@@ -85,6 +89,9 @@ set t_Co=256
 let &t_SI = "\<Esc>[6 q"
 let &t_rR = "\<Esc>[4 q"
 let &t_EI = "\<Esc>[2 q"
+let &t_Cs = "\<Esc>[4:3m"
+let &t_Ce = "\<Esc>[4:0m"
+
 set signcolumn=auto
 autocmd VimEnter * RainbowParentheses
 let g:rainbow#pairs = [['(', ')'], ['[', ']'], ['{', '}']]
