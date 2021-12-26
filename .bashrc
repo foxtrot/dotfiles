@@ -52,3 +52,16 @@ if [ -f '/opt/google-cloud-sdk/completion.bash.inc' ]; then . '/opt/google-cloud
 export PATH=$PATH:/home/$USER/.scripts/
 
 bash ~/.scripts/welcome.sh
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/opt/google-cloud-sdk/path.bash.inc' ]; then . '/opt/google-cloud-sdk/path.bash.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/opt/google-cloud-sdk/completion.bash.inc' ]; then . '/opt/google-cloud-sdk/completion.bash.inc'; fi
+
+# fzf
+source /usr/share/fzf/key-bindings.bash
+source /usr/share/fzf/completion.bash
+export FZF_COMPLETION_OPTS='--border --info=inline'
+export FZF_DEFAULT_OPTS=' --color=fg:#c6ccd9,bg:#2e3440,hl:#a94a56 --color=fg+:#c6ccd9,bg+:#2e3440,hl+:#a94a56 --color=info:#92b279,prompt:#a34a55,pointer:#af5fff --color=marker:#92b279,spinner:#cfd5e3,header:#87afaf'
+export FZF_CTRL_T_OPTS="--preview 'bat --style=numbers --color=always --line-range :500 {}'"

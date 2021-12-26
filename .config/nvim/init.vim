@@ -24,23 +24,24 @@ call plug#begin('~/.vim/plugged')
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'othree/html5.vim'
 
-"" NerdTREE
-Plug 'preservim/nerdtree'
-Plug 'jistr/vim-nerdtree-tabs'
-
 "" Indent Guide
-Plug 'Yggdroot/indentLine'
+Plug 'lukas-reineke/indent-blankline.nvim'
 
-"" Airline Status Bar, Git
-Plug 'vim-airline/vim-airline'
-"Plug 'vim-airline/vim-airline-themes'
+"" Tabline
+Plug 'akinsho/bufferline.nvim'
+
+"" LuaLine Status Bar
+Plug 'nvim-lualine/lualine.nvim'
+
+"" Git
 Plug 'tpope/vim-fugitive'
 
-"" Dracula
-Plug 'dracula/vim', { 'as': 'dracula' }
+"" fzf
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 
-"" File Search
-Plug 'ctrlpvim/ctrlp.vim'
+"" TokyoNight Theme
+Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
 
 "" Color Table
 Plug 'guns/xterm-color-table.vim'
@@ -53,58 +54,20 @@ Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 
 "" Misc
 Plug 'jszakmeister/vim-togglecursor'
+Plug 'kyazdani42/nvim-web-devicons'
 Plug 'junegunn/rainbow_parentheses.vim'
 
 call plug#end()
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" NerdTREE
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Open on Startup
-"autocmd VimEnter * NERDTreeTabsOpen
-"autocmd VimEnter * wincmd p
-
-" Close on Shutdown
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree")
-      \ && b:NERDTree.isTabTree()) | q | endif
-
-" Bind CTRL+/ to Toggle Tree
-nmap <C-_> :NERDTreeTabsToggle<CR>
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Indentation Guide
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:indentLine_setColors = 1
-let g:indentLine_color_term = 239
-let g:indentLine_char = '|'
-let g:indentLine_enabled = 1
-
-set conceallevel=0
-set list listchars=tab:\|\ ,trail:·,extends:»,precedes:«,nbsp:×
-let g:indentLine_setConceal = 0
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Airline Status
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:airline_powerline_fonts = 1
-let g:airline_theme='dracula'
-let g:airline#extensions#tabline#enabled = 1
-let g:airline_section_a = '%#__accent_bold#%{airline#util#wrap(airline#parts#mode(),0)}%#__restore__#%{airline#util#append(airline#parts#crypt(),0)}%{airline#util#append(airline#parts#paste(),0)}%{airline#util#append(airline#extensions#keymap#status(),0)}%{airline#util#append(airline#parts#spell(),0)}%{airline#util#append("",0)}%{airline#util#append("",0)}%{airline#util#append(airline#parts#iminsert(),0)}'
-let g:airline_section_b = '%{airline#util#wrap(airline#extensions#hunks#get_hunks(),100)}%{airline#util#wrap(airline#extensions#branch#get_head(),80)}'
-let g:airline_section_c = '%<%<%{airline#extensions#fugitiveline#bufname()}%m %#__accent_red#%{airline#util#wrap(airline#parts#readonly(),0)}%#__restore__#%#__accent_bold#%{airline#util#wrap(airline#extensions#coc#get_status(),0)}%#__restore__#'
-let g:airline_section_gutter = '%='
-let g:airline_section_x = '%{airline#util#prepend("",0)}%{airline#util#prepend("",0)}%{airline#util#prepend("",0)}%{airline#util#prepend("",0)}%{airline#util#prepend("",0)}%{airline#util#wrap(airline#parts#filetype(),0)}'
-let g:airline_section_y = '0x%B | %{airline#util#wrap(airline#parts#ffenc(),0)}'
-let g:airline_section_z = '%p%% %#__accent_bold#%l%#__restore__#%#__accent_bold#/%L%#__restore__# %v'
-let g:airline_section_error = '%{airline#util#wrap(airline#extensions#coc#get_error(),0)}'
-let g:airline_section_warning = '%{airline#util#wrap(airline#extensions#whitespace#check(),0)}%{airline#util#wrap(airline#extensions#coc#get_warning(),0)}'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Misc Options
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
 set number
 syntax on
-colorscheme dracula
+
+let g:tokyonight_style = "night"
+colorscheme tokyonight
+
 set termguicolors
 set numberwidth=5
 set cmdheight=1
@@ -122,6 +85,92 @@ let &t_EI = "\<Esc>[2 q"
 set signcolumn=auto
 autocmd VimEnter * RainbowParentheses
 let g:rainbow#pairs = [['(', ')'], ['[', ']'], ['{', '}']]
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Misc Key Re-bindings
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""
+nnoremap <SPACE> <Nop>
+let mapleader = " "
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" FZF.vim
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:fzf_nvim_statusline = 0 " disable statusline overwriting
+
+nnoremap <silent> <C-P> :Commands<CR>
+nnoremap <silent> <leader><space> :Files<CR>
+nnoremap <silent> <leader>a :Buffers<CR>
+nnoremap <silent> <leader>A :Windows<CR>
+nnoremap <silent> <leader>; :BLines<CR>
+nnoremap <silent> <leader>o :BTags<CR>
+nnoremap <silent> <leader>t :Vista finder coc<CR>
+nnoremap <silent> <leader>? :History<CR>
+
+nnoremap <silent> <leader>/ :execute 'Ag ' . input('Ag/')<CR><CR>
+nnoremap <silent> <leader>. :AgIn 
+
+nnoremap <silent> <leader>gl :Commits<CR>
+nnoremap <silent> <leader>ga :BCommits<CR>
+nnoremap <silent> <leader>ft :Filetypes<CR>
+
+imap <C-x><C-f> <plug>(fzf-complete-file-ag)
+imap <C-x><C-l> <plug>(fzf-complete-line)
+
+let g:fzf_colors =
+            \ { 'fg':    ['fg', 'Normal'],
+            \ 'bg':      ['bg', 'Normal'],
+            \ 'hl':      ['fg', 'Comment'],
+            \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
+            \ 'bg+':     ['bg', 'Normal'],
+            \ 'hl+':     ['fg', 'Statement'],
+            \ 'info':    ['fg', 'PreProc'],
+            \ 'border':  ['fg', 'Ignore'],
+            \ 'prompt':  ['fg', 'Conditional'],
+            \ 'pointer': ['fg', 'Exception'],
+            \ 'marker':  ['fg', 'Keyword'],
+            \ 'spinner': ['fg', 'Label'],
+            \ 'header':  ['fg', 'Comment'] }
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" File Tree (coc-explorer)
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Bind CTRL+/ to Toggle Tree
+nmap <C-_> :CocCommand explorer<CR>
+autocmd BufEnter * if (winnr("$") == 1 && &filetype == 'coc-explorer') | q | endif
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Vista configuration
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"let g:vista_default_executive = 'coc'
+let g:vista_blink  = [0, 0]
+let g:vista_sidebar_width = 60
+let g:vista_finder_alternative_executives = ['coc']
+"let g:vista#renderer#enable_icon = 0
+map <C-t> :Vista!!<CR>
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Indentation Guide
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""
+lua << EOF
+vim.opt.list = true
+vim.opt.listchars:append("space:⋅")
+
+require("indent_blankline").setup {
+    show_end_of_line = false,
+}
+EOF
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" BufferLine
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""
+lua << EOF
+require("bufferline").setup{}
+EOF
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" LuaLine
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""
+luafile ~/.config/nvim/lualine.lua
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Code Completion and Linting
@@ -148,11 +197,17 @@ nnoremap <C-S-Down> <C-w>j
 " Tabs and Buffers
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
 cnoreabbrev te tabedit
-nnoremap <C-Right> :tabnext<CR>
-nnoremap <C-Left> :tabprev<CR>
-nnoremap <C-n> :tabnew<CR>
-nnoremap <C-m> :tabclose<CR>
+nnoremap <C-Right> :bnext<CR>
+nnoremap <C-Left> :bprev<CR>
+nnoremap <C-n> :enew<CR>
+nnoremap <C-m> :bdelete<CR>
 unmap <CR>
+" Always keep cursor slighly higher than large buffer end
+augroup VCenterCursor
+  au!
+  au BufEnter,WinEnter,WinNew,VimResized *,*.*
+        \ let &scrolloff=winheight(win_getid())/4
+augroup END
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Text Manipulation
