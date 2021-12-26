@@ -110,7 +110,7 @@ nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 autocmd CursorHold * silent call CocActionAsync('highlight')
 
 " Gutter Colors
-hi! CocErrorSign ctermfg=Red
-hi! CocInfoSign ctermfg=Blue
-hi! CocWarningSign ctermfg=Yellow
+"hi! CocErrorSign ctermfg=Red
+"hi! CocInfoSign ctermfg=Blue
+"hi! CocWarningSign ctermfg=Yellow
 
