@@ -7,6 +7,7 @@ local lualine = require 'lualine'
 -- stylua: ignore
 local colors = {
   bg       = '#202328',
+  bg_dark  = '#16161e',
   fg       = '#bbc2cf',
   yellow   = '#ECBE7B',
   cyan     = '#008080',
@@ -136,11 +137,12 @@ ins_left {
 
 ins_left {
   -- mode component
-  function()
-    return mode_name[vim.fn.mode()]
-  end,
-  color = { fg = mode_color[vim.fn.mode()] },
   padding = { right = 1 },
+  function()
+      vim.api.nvim_command('hi! LualineMode guifg=' .. mode_color[vim.fn.mode()] .. ' guibg=' .. colors.bg_dark)
+      return mode_name[vim.fn.mode()]
+  end,
+  color = 'LualineMode',
 }
 
 ins_left {
