@@ -9,6 +9,8 @@
     "diagnostic.messageTarget": "float",
     "diagnostic.format": "[%source:%code]\n\n%message",
     "diagnostic.enable": true,
+    "diagnostic.virtualText": true,
+    "diagnostic.virtualTextCurrentLineOnly": false,
     "explorer.openAction.strategy": "sourceWindow",
     "explorer.width": 30,
     "explorer.buffer.root.template": "[icon & 1] OPEN EDITORS",

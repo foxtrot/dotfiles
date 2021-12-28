@@ -1,4 +1,5 @@
 " Escape closes the hover menu if open 
+"unmap <Esc>
 inoremap <expr> <Esc> pumvisible() ? "\<C-e>" : "\<Esc>"
 
 " Use tab for trigger completion with characters ahead and navigate.
@@ -25,8 +26,8 @@ inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() : "<CR>"
 
 " Use `[g` and `]g` to navigate diagnostics
 " Use `:CocDiagnostics` to get all diagnostics of current buffer in location list.
-nmap <silent> [g <Plug>(coc-diagnostic-prev)
-nmap <silent> ]g <Plug>(coc-diagnostic-next)
+"nmap <silent> <C-[> <Plug>(coc-diagnostic-prev)
+"nmap <silent> <C-]> <Plug>(coc-diagnostic-next)
 
 "" Code navigation
 " gd - Goto definition
@@ -53,8 +54,8 @@ endfunction
 nmap <leader>rn <Plug>(coc-rename)
 
 " Formatting selected code.
-xmap <leader>f  <Plug>(coc-format-selected)
-nmap <leader>f  <Plug>(coc-format-selected)
+xmap <silent> f <Plug>(coc-format-selected)
+nmap <silent> f <Plug>(coc-format-selected)
 augroup mygroup
   autocmd!
   " Setup formatexpr specified filetype(s).
@@ -64,22 +65,12 @@ augroup mygroup
 augroup end
 
 " Applying codeAction to the selected region.
-xmap <leader>a  <Plug>(coc-codeaction-selected)
-nmap <leader>a  <Plug>(coc-codeaction-selected)
 
 " Remap keys for applying codeAction to the current buffer.
-nmap <leader>ac  <Plug>(coc-codeaction)
-
-" Action menu for line
-nmap <leader>ca <Plug>(coc-codeaction-line)
+nmap <leader>ca  <Plug>(coc-codeaction-line)
 
 " Apply AutoFix to problem on the current line.
 nmap <leader>qf  <Plug>(coc-fix-current)
-
-" Use CTRL-S for selections ranges.
-" Requires 'textDocument/selectionRange' support of language server.
-nmap <silent> <C-s> <Plug>(coc-range-select)
-xmap <silent> <C-s> <Plug>(coc-range-select)
 
 " Add `:Format` command to format current buffer.
 command! -nargs=0 Format :call CocAction('format')
@@ -93,27 +84,24 @@ command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organize
 
 " Mappings for CoCList
 " Show all diagnostics.
-nnoremap <silent><nowait> <space>a  :<C-u>CocList diagnostics<cr>
-" Manage extensions.
-nnoremap <silent><nowait> <space>e  :<C-u>CocList extensions<cr>
-" Show commands.
-nnoremap <silent><nowait> <space>c  :<C-u>CocList commands<cr>
-" Find symbol of current document.
-nnoremap <silent><nowait> <space>o  :<C-u>CocList outline<cr>
-" Search workspace symbols.
-nnoremap <silent><nowait> <space>s  :<C-u>CocList -I symbols<cr>
-" Do default action for next item.
-nnoremap <silent><nowait> <space>j  :<C-u>CocNext<CR>
-" Do default action for previous item.
-nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
-" Resume latest coc list.
-nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
+"nnoremap <silent><nowait> <space>a  :<C-u>CocList diagnostics<cr>
+"nnoremap <silent><nowait> <space>e  :<C-u>CocList extensions<cr>
+"nnoremap <silent><nowait> <space>c  :<C-u>CocList commands<cr>
+"nnoremap <silent><nowait> <space>o  :<C-u>CocList outline<cr>
+"nnoremap <silent><nowait> <space>s  :<C-u>CocList -I symbols<cr>
+"nnoremap <silent><nowait> <space>j  :<C-u>CocNext<CR>
+"nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
+"nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
+
+nnoremap <silent> <leader>z :<C-u>CocFzfList<CR>
+nnoremap <silent> <leader>a :<C-u>CocFzfList actions<CR>
+nnoremap <silent> <leader>d :<C-u>CocFzfList diagnostics<CR>
+nnoremap <silent> <leader>b :<C-u>CocFzfList diagnostics --current-buf<CR>
+nnoremap <silent> <leader>c :<C-u>CocFzfList commands<CR>
+nnoremap <silent> <leader>l :<C-u>CocFzfList location<CR>
+nnoremap <silent> <leader>o :<C-u>CocFzfList outline<CR>
+nnoremap <silent> <leader>s :<C-u>CocFzfList symbols<CR>
 
 " Highlight the symbol and its references when holding the cursor.
 autocmd CursorHold * silent call CocActionAsync('highlight')
-
-" Gutter Colors
-"hi! CocErrorSign ctermfg=Red
-"hi! CocInfoSign ctermfg=Blue
-"hi! CocWarningSign ctermfg=Yellow
 

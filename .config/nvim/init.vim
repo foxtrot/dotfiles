@@ -1,18 +1,60 @@
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " VIMRC
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Defined Binds
+" Leader - SPACE
+"
 " gd - Goto Definiton
-" gy - Goto Implementation
-" gi - Show References
+" gy - Goto Type Implementation
+" gi - Goto Implementation
+" gr - Show References
 " gr - Show Hint
 "
-" Space-a - Show Diagnostics
-" Space-e - Show Extensions
-" Space-c - Show Commands
-" Space-o - Find Current Symbol in File
-" Space-s - Search for Symbol
+" rn - Rename Symbol
+" f  - Format Selected Text
+"
+" Leader-space - Open File Search
+" Leader-b     - Open Buffers
+" Leader-w     - Open Windows
+" Leader-;     - Open Buffer Lines
+" Leader-o     - Tags Window
+" Leader-?     - Vim History
+" Leader-/  - Silver Search
+" Leader-gl - Tree Git Commits
+" Leader-ga - File Git Commits
+" Leader-ft - File Type Selection
+" Leader-a  - Apply Code Action to Selection
+" Leader-ac - Apply Code Fix to Current Line
+" Leader-qf - Apply Auto Code Fix to Current Line
+" Leader-z  - CoC Fuzzy List
+" Leader-d  - Show Diagnostics
+" Leader-b  - Show Diagnostics for Current Buffer
+" Leader-c  - CoC Commands
+" Leader-l  - CoC Location
+" Leader-o  - CoC Outline
+" Leader-s  - CoC Symbols
+"
+" CTRL-space - Trigger Completion
+" CTRL-/     - Open File Tree
+" CTRL-t     - Open Tag Tree
+" CTRL-c     - Vim Commands
+" CTRL-[     - Previous Diagnostic
+" CTRL-]     - Next Diagnostic
+"
+" CTRL-SHIFT-RIGHT - Switch Pane to Right
+" CTRL-SHIFT-LEFT  - Switch Pane to Left
+" CTRL-SHIFT-UP    - Switch Pane Upwards
+" CTRL-SHIFT-DOWN  - Switch Pane Downwards
+" CTRL-RIGHT       - Switch Buffer to Right
+" CTRL-LEFT        - Switch Buffer to Left
+" CTRL-m           - Delete Buffer
+"
+"
+" :Format - Format Current Buffer
+" :Fold   - Fold Current Buffer
+" :Unfold - Unfold Current Buffer
+" :OR     - Organize Imports
+" 
 "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -23,6 +65,7 @@ call plug#begin('~/.vim/plugged')
 "" Code Completion, Linting
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'othree/html5.vim'
+Plug 'antoinemadec/coc-fzf'
 
 "" Indent Guide
 Plug 'lukas-reineke/indent-blankline.nvim'
@@ -107,24 +150,19 @@ let mapleader = " "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:fzf_nvim_statusline = 0 " disable statusline overwriting
 
-nnoremap <silent> <C-P> :Commands<CR>
+nnoremap <silent> <C-c> :Commands<CR>
 nnoremap <silent> <leader><space> :Files<CR>
-nnoremap <silent> <leader>a :Buffers<CR>
+nnoremap <silent> <leader>b :Buffers<CR>
 nnoremap <silent> <leader>A :Windows<CR>
 nnoremap <silent> <leader>; :BLines<CR>
 nnoremap <silent> <leader>o :BTags<CR>
-nnoremap <silent> <leader>t :Vista finder coc<CR>
 nnoremap <silent> <leader>? :History<CR>
 
 nnoremap <silent> <leader>/ :execute 'Ag ' . input('Ag/')<CR><CR>
-nnoremap <silent> <leader>. :AgIn 
 
 nnoremap <silent> <leader>gl :Commits<CR>
 nnoremap <silent> <leader>ga :BCommits<CR>
 nnoremap <silent> <leader>ft :Filetypes<CR>
-
-imap <C-x><C-f> <plug>(fzf-complete-file-ag)
-imap <C-x><C-l> <plug>(fzf-complete-line)
 
 let g:fzf_colors =
             \ { 'fg':    ['fg', 'Normal'],
@@ -209,7 +247,6 @@ nnoremap <C-S-Down> <C-w>j
 cnoreabbrev te tabedit
 nnoremap <C-Right> :bnext<CR>
 nnoremap <C-Left> :bprev<CR>
-nnoremap <C-n> :enew<CR>
 nnoremap <C-m> :bdelete<CR>
 unmap <CR>
 " Always keep cursor slighly higher than large buffer end

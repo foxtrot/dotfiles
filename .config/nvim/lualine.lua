@@ -184,7 +184,9 @@ ins_right {
   update_in_insert = true
 }
 
-ins_right {'filetype'}
+ins_right {
+    'filetype',
+}
 
 ins_right {
   'o:encoding', -- option component same as &encoding in viml
