@@ -26,8 +26,8 @@ inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() : "<CR>"
 
 " Use `[g` and `]g` to navigate diagnostics
 " Use `:CocDiagnostics` to get all diagnostics of current buffer in location list.
-"nmap <silent> <C-[> <Plug>(coc-diagnostic-prev)
-"nmap <silent> <C-]> <Plug>(coc-diagnostic-next)
+nmap <silent> <C-[> <Plug>(coc-diagnostic-prev)
+nmap <silent> <C-]> <Plug>(coc-diagnostic-next)
 
 "" Code navigation
 " gd - Goto definition

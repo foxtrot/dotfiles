@@ -86,9 +86,6 @@ Plug 'junegunn/fzf.vim'
 "" TokyoNight Theme
 Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
 
-"" Color Table
-Plug 'guns/xterm-color-table.vim'
-
 "" Structure View
 Plug 'liuchengxu/vista.vim'
 
@@ -134,6 +131,8 @@ let &t_rR = "\<Esc>[4 q"
 let &t_EI = "\<Esc>[2 q"
 let &t_Cs = "\<Esc>[4:3m"
 let &t_Ce = "\<Esc>[4:0m"
+
+set cinoptions=(0,+1s,:0,=2s,>2s,c1s,g2s,h2s,j1,l1,m1,p2s,t0,u0,w1
 
 set signcolumn=auto
 autocmd VimEnter * RainbowParentheses
@@ -201,10 +200,10 @@ map <C-t> :Vista!!<CR>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
 lua << EOF
 vim.opt.list = true
-vim.opt.listchars:append("space:⋅")
 
 require("indent_blankline").setup {
-    show_end_of_line = false,
+    show_end_of_line = true,
+    filetype_exclude = { "coc-explorer" },
 }
 EOF
 
@@ -262,10 +261,12 @@ augroup END
 " Visual Mode
 "nnoremap <Left> <gv
 "nnoremap <Right> >gv
-" Visual Multi configuration
+" Visual Multi co:nfiguration
+nmap <C-d> <Plug>(VM-Find-Under)
+imap <C-d> <Esc><Plug>(VM-Find-Under)
 let g:VM_maps = {}
-let g:VM_maps["Undo"]      = 'u'
-let g:VM_maps["Redo"]      = '<C-r>'
+let g:VM_maps["Undo"] = 'u'
+let g:VM_maps["Redo"] = '<C-r>'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Helpers
