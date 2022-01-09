@@ -1,0 +1,43 @@
+[user]
+	email = foxtrot@malloc.me
+	name = Marc
+	signingkey = 7AE6C9AE08E9C1F3C578FE8E0657563F705ACAAE
+
+[commit]
+	gpgsign = true
+
+[gpg]
+	program = gpg2
+
+[url "git@github.com:"]
+	insteadOf = https://github.com/
+
+[core]
+    hooksPath = /home/foxtrot/.git-templates/hooks/
+    pager = delta
+
+[diff]
+    colorMoved = default
+
+[merge]
+    conflictstyle = diff3
+
+[interactive]
+    diffFilter = delta --color-only --features=interactive
+
+[delta]
+    features = decorations
+    line-numbers = true
+    hyperlinks = true
+
+[delta "interactive"]
+    keep-plus-minus-markers = false
+
+[delta "decorations"]
+    commit-decoration-style = blue ol
+    commit-style = raw
+    file-style = omit
+    hunk-header-decoration-style = blue box
+    hunk-header-file-style = red
+    hunk-header-line-number-style = "#067a00"
+    hunk-header-style = file line-number syntax
