@@ -132,7 +132,7 @@ let &t_EI = "\<Esc>[2 q"
 let &t_Cs = "\<Esc>[4:3m"
 let &t_Ce = "\<Esc>[4:0m"
 
-set cinoptions=(0,+1s,:0,=2s,>2s,c1s,g2s,h2s,j1,l1,m1,p2s,t0,u0,w1
+set cinoptions=(g0,+2,(0,i0,t0,:0)
 
 set signcolumn=auto
 autocmd VimEnter * RainbowParentheses
