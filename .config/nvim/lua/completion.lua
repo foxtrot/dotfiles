@@ -1,4 +1,6 @@
 local cmp = require('cmp')
+local types = require("cmp.types")
+local str = require("cmp.utils.str")
 local snip = require('luasnip')
 local lspkind = require('lspkind')
 
@@ -8,20 +10,27 @@ local config = {
     },
     formatting = {
         format = lspkind.cmp_format({
-            mode = 'symbol',
+            mode = 'symbol_text',
             maxwidth = 50,
 
-            before = function (entry, vim_item)
-                local source_names = {
-                    buffer = "[Buffer]",
-                    luasnip = "[Snippet]",
-                    nvim_lsp = "[LSP]",
-                }
-                vim_item.menu = source_names[entry.source.name]
+            before = function(entry, vim_item)
+                -- Get the full snippet (and only keep first line)
+                local word = entry:get_insert_text()
+                if entry.completion_item.insertTextFormat == types.lsp.InsertTextFormat.Snippet then
+                    word = vim.lsp.util.parse_snippet(word)
+                end
+                word = str.oneline(word)
+
+                if
+                    entry.completion_item.insertTextFormat == types.lsp.InsertTextFormat.Snippet and string.sub(vim_item.abbr, -1, -1) == "~"
+                then
+                    word = word
+                end
+                vim_item.abbr = word
 
                 return vim_item
-            end
-        })
+            end,
+        }),
     },
     mapping = {
         -- Insert option
@@ -61,7 +70,6 @@ local config = {
         { name = 'luasnip' },
         { name = 'path' },
         { name = 'buffer' },
-        { name = 'nvim_lsp_signature_help' },
     },
     snippet = { expand = function(args) snip.lsp_expand(args.body) end },
 }

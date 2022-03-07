@@ -92,4 +92,5 @@ require('tele-scope')
 require('treesitter')
 require('diag-trouble')
 require('buffer-line')
+require('signature')
 EOF
