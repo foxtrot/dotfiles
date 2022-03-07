@@ -172,7 +172,7 @@ ins_left {
 -- Add components to right sections
 ins_right {
   'diagnostics',
-  sources = { 'coc' },
+  sources = { 'nvim_lsp' },
   symbols = { error = ' ', warn = ' ', info = ' ', hint = ' ' },
   diagnostics_color = {
     color_error = { fg = colors.red },
