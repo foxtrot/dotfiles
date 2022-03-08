@@ -93,4 +93,5 @@ require('treesitter')
 require('diag-trouble')
 require('buffer-line')
 require('signature')
+require('tree')
 EOF

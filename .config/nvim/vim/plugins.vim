@@ -27,7 +27,7 @@ Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' }
 Plug 'hrsh7th/cmp-buffer'
 Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'hrsh7th/cmp-path'
-Plug 'hrsh7th/nvim-cmp'
+Plug 'hrsh7th/nvim-cmp', { 'branch': 'dev' }
 Plug 'ray-x/lsp_signature.nvim'
 Plug 'onsails/lspkind-nvim'
 
@@ -50,8 +50,11 @@ Plug 'nvim-lualine/lualine.nvim'
 " Buffer Line
 Plug 'akinsho/bufferline.nvim'
 
+" File Explorer
+Plug 'kyazdani42/nvim-tree.lua'
+
 " Indent marker
-" Plug 'lukas-reineke/indent-blankline.nvim'
+Plug 'lukas-reineke/indent-blankline.nvim'
 
 " Colorscheme
 Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
