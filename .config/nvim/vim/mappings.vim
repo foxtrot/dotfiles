@@ -2,7 +2,7 @@
 map <Space> <leader>
 
 " Create splits
-nnoremap <leader>h :sp<CR>
+nnoremap <leader>s :sp<CR>
 nnoremap <leader>v :vsp<CR>
 
 " Move between splits

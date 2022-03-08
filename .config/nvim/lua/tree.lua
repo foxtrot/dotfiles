@@ -19,7 +19,7 @@ require'nvim-tree'.setup {
     },
     
     diagnostics = {
-        enable = false,
+        enable = true,
         icons = {
             hint = "",
             info = "",

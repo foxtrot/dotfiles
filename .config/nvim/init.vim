@@ -24,7 +24,7 @@
 "    CTRL+SHIFT+RIGHT    Move Right
 "    CTRL+SHIFT+UP       Move Up
 "    CTRL+SHIFT+DOWN     Move Down
-"    Leader+h            Open Horizontal
+"    Leader+s            Open Horizontal
 "    Leader+v            Open Vertical
 "
 " Buffers:
@@ -44,6 +44,7 @@
 "    Leader+xq           Show Quickfixes
 "    ]g                  Next Diagnostic
 "    [g                  Previous Diagnostic
+"    Leader+h            Show Signature
 "    Leader+la           Code Actions
 "    Leader+ld           Definitions
 "    Leader+le           Open Diagnostic Float
