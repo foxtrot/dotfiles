@@ -5,10 +5,24 @@ local snip = require('luasnip')
 local lspkind = require('lspkind')
 
 local config = {
-    documentation = {
-        border = { '╭', '─', '╮', '│', '╯', '─', '╰', '│' },
+    window = {
+        completion = {
+            border = 'single',
+            scrollbar = '║',
+            winhighlight = 'NormalFloat:NormalFloat,FloatBorder:FloatBorder',
+        },
+        documentation = {
+            border = 'single',
+            scrollbar = '║',
+            winhighlight = 'NormalFloat:NormalFloat,FloatBorder:FloatBorder',
+        },
     },
     formatting = {
+        fields = {
+            cmp.ItemField.Kind,
+            cmp.ItemField.Abbr,
+            cmp.ItemField.Menu,
+        },
         format = lspkind.cmp_format({
             mode = 'symbol_text',
             maxwidth = 50,
