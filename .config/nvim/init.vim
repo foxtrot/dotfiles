@@ -44,16 +44,16 @@
 "    Leader+xq           Show Quickfixes
 "    ]g                  Next Diagnostic
 "    [g                  Previous Diagnostic
-"    Leader+gh           Show Signature
-"    Leader+ga           Code Actions
-"    Leader+gd           Definitions
-"    Leader+ge           Open Diagnostic Float
-"    Leader+gl           Diagnostics
-"    Leader+gn           Rename Buffer
-"    Leader+gr           Show References
-"    Leader+gs           Show Symbols
-"    Leader+gt           Show Type Definitions
-"    Leader+gw           Show Workplace Symbols
+"    gh                  Show Signature
+"    ga                  Code Actions
+"    gd                  Definitions
+"    ge                  Open Diagnostic Float
+"    gl                  Diagnostics
+"    gn                  Rename Buffer
+"    gr                  Show References
+"    gs                  Show Symbols
+"    gt                  Show Type Definitions
+"    gw                  Show Workplace Symbols
 "
 " Git:
 "    Leader+gb           Show Git Branches
