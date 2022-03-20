@@ -7,11 +7,6 @@ alias cb="xclip -selection clipboard"
 alias cat="bat --pager=never"
 alias genpass="~/.scripts/gen-pass.sh"
 
-# Desktop Screenshare
-alias castmiddle="vlc --no-video-deco --no-embedded-video --screen-fps=60 --screen-top=480 --screen-left=1080 --screen-width=3440 --screen-height=1440 screen://"
-alias castleft="vlc --no-video-deco --no-embedded-video --screen-fps=60 --screen-top=0 --screen-left=0 --screen-width=1080 --screen-height=1920 screen://"
-alias castright="vlc --no-video-deco --no-embedded-video --screen-fps=60 --screen-top=0 --screen-left=4520 --screen-width=1080 --screen-height=1920 screen://"
-
 # Tmux
 alias ta="tmux a -t $1"
 alias tl="tmux ls"
@@ -29,9 +24,6 @@ alias gco="git checkout"
 alias gcob="git checkout -b"
 alias gp="git push"
 alias gsu="git submodule update --init --remote --recursive --force"
-
-# Google Cloud
-alias sqlconnect="cd ~ && ./cloud_sql_proxy -instances=hak5-dl:us-central1:download-portal=tcp:5432"
 
 # Docker
 dsc() {
