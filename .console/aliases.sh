@@ -8,6 +8,7 @@ alias cat="bat --pager=never"
 alias genpass="~/.scripts/gen-pass.sh"
 
 # Tmux
+alias tn="tmux new -s $1"
 alias ta="tmux a -t $1"
 alias tl="tmux ls"
 
