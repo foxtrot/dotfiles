@@ -45,18 +45,12 @@ export PS4="$BLUE+$WHITE$RESET "
 export PATH=$PATH:$(go env GOPATH)/bin
 export EDITOR=vim
 
-# GCloud
-if [ -f '/opt/google-cloud-sdk/path.bash.inc' ]; then . '/opt/google-cloud-sdk/path.bash.inc'; fi
-if [ -f '/opt/google-cloud-sdk/completion.bash.inc' ]; then . '/opt/google-cloud-sdk/completion.bash.inc'; fi
-
 export PATH=$PATH:/home/$USER/.scripts/
 
 bash ~/.scripts/welcome.sh
 
-# The next line updates PATH for the Google Cloud SDK.
+# GCloud
 if [ -f '/opt/google-cloud-sdk/path.bash.inc' ]; then . '/opt/google-cloud-sdk/path.bash.inc'; fi
-
-# The next line enables shell command completion for gcloud.
 if [ -f '/opt/google-cloud-sdk/completion.bash.inc' ]; then . '/opt/google-cloud-sdk/completion.bash.inc'; fi
 
 # fzf
