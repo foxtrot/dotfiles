@@ -4,7 +4,7 @@ alias l='ls'
 alias grep='grep --color=auto'
 alias ip='ip -c'
 alias cb="xclip -selection clipboard"
-alias cat="bat --pager=never"
+alias cat="batcat --pager=never"
 alias genpass="~/.scripts/gen-pass.sh"
 
 # Tmux
