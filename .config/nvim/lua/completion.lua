@@ -47,8 +47,9 @@ local config = {
         }),
     },
     mapping = {
+        --  open complete dialogue
+        ['<C-Space>'] = cmp.mapping.complete(),
         -- Insert option
-        ['<C-Space>'] = cmp.mapping.confirm({ behavior = cmp.ConfirmBehavior.Insert, select = true }),
         ['<CR>'] = cmp.mapping.confirm({ behavior = cmp.ConfirmBehavior.Insert, setup = true }),
         ['<C-y>'] = cmp.mapping.confirm({ behavior = cmp.ConfirmBehavior.Insert, select = true }),
         -- Scroll doc
