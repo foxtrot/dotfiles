@@ -13,7 +13,7 @@ esac
 
 # Handle Platform Specifics
 if [[ "$machine" = "Mac" ]]; then
-    export SSH_AUTH_SOCK="/Users/marc/Library/Containers/com.maxgoedjen.Secretive.SecretAgent/Data/socket.ssh"
+    export SSH_AUTH_SOCK="/Users/$USER/Library/Containers/com.maxgoedjen.Secretive.SecretAgent/Data/socket.ssh"
     export HOMEBREW_NO_ANALYTICS=1
     export DOTNET_CLI_TELEMETRY_OPTOUT=1
     export POWERSHELL_TELEMETRY_OPTOUT=1
