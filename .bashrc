@@ -11,9 +11,14 @@ case "$(uname -s)" in
     Darwin*)   machine=Mac;;
 esac
 
-# Handle Platform
+# Handle Platform Specifics
 if [[ "$machine" = "Mac" ]]; then
     export SSH_AUTH_SOCK="/Users/marc/Library/Containers/com.maxgoedjen.Secretive.SecretAgent/Data/socket.ssh"
+    export HOMEBREW_NO_ANALYTICS=1
+    export DOTNET_CLI_TELEMETRY_OPTOUT=1
+    export POWERSHELL_TELEMETRY_OPTOUT=1
+    eval $(/opt/homebrew/bin/brew shellenv)
+    export PATH="/opt/homebrew/opt/coreutils/libexec/gnubin:$PATH"
 fi
 
 # Alias
@@ -53,7 +58,6 @@ export PS3="$GREEN?$WHITE$RESET "
 export PS4="$BLUE+$WHITE$RESET "
 
 # Pathing
-export PATH="/opt/homebrew/opt/coreutils/libexec/gnubin:$PATH"
 export PATH=$PATH:/home/$USER/.scripts/
 if [[ "$(which go)" != "" ]]; then
     export PATH=$PATH:$(go env GOPATH)/bin
@@ -64,11 +68,6 @@ if [ -f '/opt/google-cloud-sdk/path.bash.inc' ]; then . '/opt/google-cloud-sdk/p
 if [ -f '/opt/google-cloud-sdk/completion.bash.inc' ]; then . '/opt/google-cloud-sdk/completion.bash.inc'; fi
 
 # Misc
-export HOMEBREW_NO_ANALYTICS=1
-export DOTNET_CLI_TELEMETRY_OPTOUT=1
-export POWERSHELL_TELEMETRY_OPTOUT=1
-eval $(/opt/homebrew/bin/brew shellenv)
-
 if [ -f ~/.scripts/welcome.sh ]; then
     bash ~/.scripts/welcome.sh
 fi
