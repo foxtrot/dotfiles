@@ -84,6 +84,9 @@ lua << EOF
 -- Packer
 require('plugins')
 
+-- Mason
+require('mason-menu')
+
 -- Colorscheme & Theme
 require('theme/colorscheme')
 

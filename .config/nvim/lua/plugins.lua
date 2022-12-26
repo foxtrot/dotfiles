@@ -15,9 +15,11 @@ return require('packer').startup(function(use)
   use 'onsails/lspkind-nvim'
   use 'folke/trouble.nvim'
 
+  -- Mason
+  use 'williamboman/mason.nvim'
+
   -- Colorscheme & Theme
   use 'folke/tokyonight.nvim'
-  use 'kyazdani42/nvim-web-devicons'
 
   -- Lua & Plugin Helpers
   use 'nvim-lua/plenary.nvim'
@@ -30,7 +32,7 @@ return require('packer').startup(function(use)
   use 'akinsho/bufferline.nvim'
 
   -- File Explorer & Code Navigation
-  use 'kyazdani42/nvim-tree.lua'
+  use { 'kyazdani42/nvim-tree.lua', requires = { 'nvim-tree/nvim-web-devicons', } }
   use 'nvim-telescope/telescope.nvim'
   use 'nvim-telescope/telescope-file-browser.nvim'
 
