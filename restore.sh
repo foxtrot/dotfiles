@@ -17,6 +17,8 @@ function copy_files_any() {
 
     cp -r .gitconfig ~/
     cp -r .tmux.conf ~/
+    cp -r .bashrc ~/
+    cp -r .bash_profile ~/
 }
 
 function main() {
