@@ -97,4 +97,4 @@ require('nvim-tree').setup {
     },
 }
 
-vim.api.nvim_set_keymap("n", "<C-_>", "<cmd>NvimTreeToggle<CR>", {silent = true, noremap = true} )
+vim.api.nvim_set_keymap("n", "<C-/>", "<cmd>NvimTreeToggle<CR>", {silent = true, noremap = true} )
