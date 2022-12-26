@@ -18,7 +18,6 @@
 "    Leader+W            Save All
 "    Leader+z            Clear Search (Highlighting)
 "
-"
 " Splits:
 "    CTRL+SHIFT+LEFT     Move Left
 "    CTRL+SHIFT+RIGHT    Move Right
@@ -79,20 +78,33 @@
 
 source ~/.config/nvim/vim/basics.vim
 source ~/.config/nvim/vim/mappings.vim
-source ~/.config/nvim/vim/plugins.vim
+
 
 lua << EOF
-require('color-scheme')
-require('completion')
-require('format')
-require('git-integration')
-require('indent-line')
+-- Packer
+require('plugins')
+
+-- Colorscheme & Theme
+require('theme/colorscheme')
+
+-- LSP & Diagnostics
 require('lsp')
-require('status-line')
-require('tele-scope')
-require('treesitter')
-require('diag-trouble')
+require('lsp/tree-sitter')
+require('lsp/signature')
+require('lsp/completion')
+require('diagnostics')
+
+-- Line
 require('buffer-line')
-require('signature')
+require('status-line')
+
+-- File Navigation
 require('tree')
+require('tele-scope')
+
+-- Source Code Management
+require('git-integration')
+require('format')
+
+-- require('indent-line')
 EOF
