@@ -132,12 +132,12 @@ ins_left {
     return '▊'
   end,
   color = { fg = colors.blue }, -- Sets highlighting of component
-  padding = { left = 0, right = 1 }, -- We don't need space before this
+  padding = { left = 0, right = 0 }, -- We don't need space before this
 }
 
 ins_left {
   -- mode component
-  padding = { right = 1 },
+  padding = { left = 1, right = 1 },
   function()
       vim.api.nvim_command('hi! LualineMode guifg=' .. mode_color[vim.fn.mode()] .. ' guibg=' .. colors.bg_dark)
       return mode_name[vim.fn.mode()]
