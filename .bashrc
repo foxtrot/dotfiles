@@ -5,6 +5,17 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
+# Detect Platform
+case "$(uname -s)" in
+    Linux*)    machine=Linux;;
+    Darwin*)   machine=Mac;;
+esac
+
+# Handle Platform
+if [[ "$machine" = "Mac" ]]; then
+    export SSH_AUTH_SOCK="/Users/marc/Library/Containers/com.maxgoedjen.Secretive.SecretAgent/Data/socket.ssh"
+fi
+
 # Alias
 source ~/.console/aliases.sh
 
@@ -36,26 +47,28 @@ then
 else
     displaydirectory=$basedirectory
 fi
-
 export PS1="$GREEN(\W) $RED>> $RESET"
 export PS2="$ORANGE>$WHITE$RESET "
 export PS3="$GREEN?$WHITE$RESET "
 export PS4="$BLUE+$WHITE$RESET "
 
-export PATH=$PATH:$(go env GOPATH)/bin
-export EDITOR=vim
-
+# Pathing
+export PATH="/opt/homebrew/opt/coreutils/libexec/gnubin:$PATH"
 export PATH=$PATH:/home/$USER/.scripts/
-
-bash ~/.scripts/welcome.sh
+if [[ "$(which go)" != "" ]]; then
+    export PATH=$PATH:$(go env GOPATH)/bin
+fi
 
 # GCloud
 if [ -f '/opt/google-cloud-sdk/path.bash.inc' ]; then . '/opt/google-cloud-sdk/path.bash.inc'; fi
 if [ -f '/opt/google-cloud-sdk/completion.bash.inc' ]; then . '/opt/google-cloud-sdk/completion.bash.inc'; fi
 
-# fzf
-source /usr/share/fzf/key-bindings.bash
-source /usr/share/fzf/completion.bash
-export FZF_COMPLETION_OPTS='--border --info=inline'
-export FZF_DEFAULT_OPTS=' --color=fg:#c6ccd9,bg:#2e3440,hl:#a94a56 --color=fg+:#c6ccd9,bg+:#2e3440,hl+:#a94a56 --color=info:#92b279,prompt:#a34a55,pointer:#af5fff --color=marker:#92b279,spinner:#cfd5e3,header:#87afaf'
-export FZF_CTRL_T_OPTS="--preview 'bat --style=numbers --color=always --line-range :500 {}'"
+# Misc
+export HOMEBREW_NO_ANALYTICS=1
+export DOTNET_CLI_TELEMETRY_OPTOUT=1
+export POWERSHELL_TELEMETRY_OPTOUT=1
+eval $(/opt/homebrew/bin/brew shellenv)
+
+if [ -f ~/.scripts/welcome.sh ]; then
+    bash ~/.scripts/welcome.sh
+fi

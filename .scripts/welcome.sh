@@ -1,5 +1,10 @@
 #!/bin/bash
 
+# Ignore macOS for now...
+if [[ "$(uname -s)" != "Linux"* ]]; then
+    exit 0
+fi
+
 WHITE="$(tput setaf 255)"
 BLACK="$(tput setaf 008)"
 RED="$(tput setaf 001)"
