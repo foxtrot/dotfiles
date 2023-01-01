@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!-- Install: copy to /Library/LaunchDaemons/, chown root:wheel and chmod 644 -->
+<plist version="1.0">
+  <dict>
+    <key>Label</key>
+    <string>local.noatime</string>
+    <key>ProgramArguments</key>
+    <array>
+      <string>/bin/bash</string>
+      <string>-c</string>
+      <!-- first get the current mount options to see if there are any default options that we missed to provide here -->
+      <!-- as mount overwrites the default options except the ones it reads out from the filesystem table -->
+      <string>mnt=/System/Volumes/Data; mount | grep -F " $mnt "; mount -vuwo nobrowse,noatime "$mnt"</string>
+    </array>
+    <!-- launchd appends the output to the log file so write it to /tmp that is removed on each reboot -->
+    <key>StandardOutPath</key>
+    <string>/tmp/noatime.log</string>
+    <key>StandardErrorPath</key>
+    <string>/tmp/noatime.log</string>
+    <key>RunAtLoad</key>
+    <true/>
+    <key>LaunchOnlyOnce</key>
+    <true/>
+    <key>KeepAlive</key>
+    <false/>
+  </dict>
+</plist>
