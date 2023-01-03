@@ -42,6 +42,7 @@ require('lspconfig').gopls.setup{
             vulncheck = "Imports",
         },
     },
+    on_attach = common.on_attach
 }
 
 -- HTML

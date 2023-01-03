@@ -4,8 +4,8 @@ for type, icon in pairs(signs) do
   vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
 end
 
-local function diagnostic_config()
-  vim.diagnostic.config {
+function diagnostic_config()
+  vim.diagnostic.config({
     float = {
       border = 'single',
       show_header = false,
@@ -16,7 +16,7 @@ local function diagnostic_config()
     underline = true,
     update_in_insert = true,
     virtual_text = true
-  }
+  })
 
   vim.lsp.handlers['textDocument/signatureHelp'] = vim.lsp.with(vim.lsp.handlers.signature_help, {
     border = 'single'
@@ -26,8 +26,14 @@ local function diagnostic_config()
   })
 end
 
+vim.api.nvim_create_user_command('ConfigDiagnosticM', function()
+    diagnostic_config()
+  end,
+  {nargs = 0, desc = 'uwu'}
+)
+
 -- Show current line diagnostics on hover
-vim.cmd('autocmd CursorHold * lua vim.diagnostic.open_float()')
+vim.cmd('autocmd CursorHold * lua vim.diagnostic.open_float(nil, {focus = false})')
 vim.o.updatetime = 300
 
 local M = {}
