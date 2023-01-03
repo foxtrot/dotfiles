@@ -12,12 +12,12 @@ function copy_files_any() {
 
     cp -r .config ~/
     cp -r .scripts ~/
-    cp -r .console ~/
     cp -r .git-templates ~/
 
     cp -r .gitconfig ~/
     cp -r .tmux.conf ~/
     cp -r .bashrc ~/
+    cp -r .bash_aliases ~/
     cp -r .bash_profile ~/
 }
 

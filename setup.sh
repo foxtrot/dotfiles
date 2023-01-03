@@ -45,15 +45,15 @@ function config_macos_system() {
         echo "[*] Installing brew packages"
 
         while read -r line; do
-            brew tap $line
+            sudo -u $USERNAME brew tap $line
         done < system-configs/macos/brew/taps
 
         while read -r line; do
-            brew install $line
+            sudo -u $USERNAME brew install $line
         done < system-configs/macos/brew/casks
 
         while read -r line; do
-            brew install $line
+            sudo -u $USERNAME brew install $line
         done < system-configs/macos/brew/leaves
     fi
 
