@@ -26,7 +26,3 @@ nnoremap <leader>z :noh<CR>
 
 " Search for visually selected text
 vnoremap // y/\V<C-R>=escape(@",'/\')<CR><CR>
-
-" Apply macros
-nnoremap Q @q
-vnoremap Q :norm @q<CR>

@@ -9,7 +9,7 @@ local ensure_packer = function()
   return false
 end
 
-local packer_bootstrap = ensure_packer()
+local pcacker_bootstrap = ensure_packer()
 
 return require('packer').startup(function(use)
   -- Packer can manage itself

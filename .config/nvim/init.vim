@@ -79,7 +79,6 @@
 source ~/.config/nvim/vim/basics.vim
 source ~/.config/nvim/vim/mappings.vim
 
-
 lua << EOF
 -- Packer
 require('plugins')
@@ -95,7 +94,7 @@ require('lsp')
 require('lsp/tree-sitter')
 require('lsp/signature')
 require('lsp/completion')
-require('diagnostics')
+require('lsp/diagnostics')
 
 -- Line
 require('buffer-line')

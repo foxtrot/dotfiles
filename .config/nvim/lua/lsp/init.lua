@@ -28,22 +28,6 @@ require('lspconfig').bashls.setup(common.default_config)
 -- CSS
 require('lspconfig').cssls.setup(common.no_formatting_config)
 
--- HTML
-require('lspconfig').html.setup(common.no_formatting_config)
-
--- JSON, YAML
-require('lspconfig').jsonls.setup(common.no_formatting_config)
-require('lspconfig').yamlls.setup(common.no_formatting_config)
-
--- C, C++
-require('lspconfig').clangd.setup(common.no_formatting_config)
-
--- CMake
-require('lspconfig').cmake.setup(common.no_formatting_config)
-
--- Python
-require('lspconfig').pyright.setup(common.default_config)
-
 -- Go
 require('lspconfig').gopls.setup{
     cmd = {"gopls", "serve"},
@@ -59,3 +43,19 @@ require('lspconfig').gopls.setup{
         },
     },
 }
+
+-- HTML
+require('lspconfig').html.setup(common.no_formatting_config)
+
+-- JSON, YAML
+require('lspconfig').jsonls.setup(common.no_formatting_config)
+require('lspconfig').yamlls.setup(common.no_formatting_config)
+
+-- C, C++
+require('lspconfig').clangd.setup(common.no_formatting_config)
+
+-- CMake
+require('lspconfig').cmake.setup(common.no_formatting_config)
+
+-- Python
+require('lspconfig').pyright.setup(common.default_config)
