@@ -1,13 +1,13 @@
 [user]
 	email = foxtrot@malloc.me
 	name = Marc
-	signingkey = 7AE6C9AE08E9C1F3C578FE8E0657563F705ACAAE
+	signingkey = /Users/marc/.ssh/key.pub
 
 [commit]
 	gpgsign = true
 
 [gpg]
-	program = gpg2
+	format = ssh
 
 [url "git@github.com:"]
 	insteadOf = https://github.com/
