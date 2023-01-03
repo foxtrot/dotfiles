@@ -1,6 +1,7 @@
 aria2
 bash
 binwalk
+cmake
 coreutils
 go
 gopls
