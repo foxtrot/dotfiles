@@ -1,4 +1,5 @@
 local common = require('lsp/common')
+local util = require 'lspconfig.util'
 
 -- TypeScript
 _G.organize_imports = function ()
@@ -44,4 +45,17 @@ require('lspconfig').cmake.setup(common.no_formatting_config)
 require('lspconfig').pyright.setup(common.default_config)
 
 -- Go
-require('lspconfig').gopls.setup(common.default_config)
+require('lspconfig').gopls.setup{
+    cmd = {"gopls", "serve"},
+    filetypes = {"go", "gomod", "gowork", "gotmpl"},
+    root_dir = util.root_pattern("go.work", "go.mod", ".git"),
+    settings = {
+        gopls = {
+            analyses = {
+                unusedparams = true,
+            },
+            staticcheck = true,
+            vulncheck = "Imports",
+        },
+    },
+}
