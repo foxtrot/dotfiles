@@ -9,7 +9,7 @@ local ensure_packer = function()
   return false
 end
 
-local pcacker_bootstrap = ensure_packer()
+local packer_bootstrap = ensure_packer()
 
 return require('packer').startup(function(use)
   -- Packer can manage itself
@@ -52,4 +52,7 @@ return require('packer').startup(function(use)
   -- Source Code Management
   use 'lewis6991/gitsigns.nvim'
   use 'mhartington/formatter.nvim'
+
+  -- Google
+  use 'sso://user@user/skinne/google.nvim'
 end)

@@ -108,5 +108,7 @@ require('lsp/signature')
 require('lsp/completion')
 require('lsp/diagnostics')
 
--- require('indent-line')
+-- Google
+pcall(require, 'google')
+
 EOF
