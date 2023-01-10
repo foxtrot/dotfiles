@@ -21,9 +21,6 @@ if [[ "$machine" = "Mac" ]]; then
     export PATH="/opt/homebrew/opt/coreutils/libexec/gnubin:$PATH"
 fi
 
-# Alias
-source ~/.console/aliases.sh
-
 # Colours
 WHITE="\[$(tput setaf 255)\]"
 BLACK="$(tput setaf 008)\]"
