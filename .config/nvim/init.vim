@@ -76,10 +76,12 @@
 "    Leader+tt           Telescope File Browser
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-source ~/.config/nvim/vim/basics.vim
-source ~/.config/nvim/vim/mappings.vim
-
 lua << EOF
+-- Basics & Mappings
+require('basics')
+require('mappings')
+require('overrides')
+
 -- Packer
 require('plugins/plugins')
 
