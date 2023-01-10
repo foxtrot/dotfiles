@@ -28,4 +28,4 @@ vim.api.nvim_set_keymap('n', '<leader>W', ':wall', silentops)
 vim.api.nvim_set_keymap('n', '<leader>z', ':noh', silentops)
 
 -- Search for visually selected text
-vim.api.nvim_set_keymap('v', '//', 'y/\\V<C-R>=escape(@",\'/\')')
+vim.api.nvim_set_keymap('v', '//', 'y/\\V<C-R>=escape(@",\'/\')', silentops)

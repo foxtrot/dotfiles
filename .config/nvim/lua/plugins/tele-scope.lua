@@ -12,7 +12,7 @@ vim.api.nvim_set_keymap('n', '<leader>tt', '<cmd>Telescope file_browser<CR>', op
 
 require('telescope').setup {
   defaults = {
-    layout_strategy = 'vertical',
+    layout_strategy = 'horizontal',
   },
   pickers = {
     find_files = {

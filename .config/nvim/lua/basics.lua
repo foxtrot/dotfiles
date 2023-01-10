@@ -1,12 +1,12 @@
 -- Misc settings
-vim.opt.clipboard = 'unamedplus'
+-- vim.opt.clipboard:append({'unamedplus'})
 vim.opt.signcolumn = 'yes'
 vim.opt.number = true
-vim.opt.nowrap = true
+vim.opt.wrap = false
 vim.opt.smartcase = true
 vim.opt.termguicolors = true
 vim.opt.undofile = true
-vim.opt.noswapfile = true
+vim.opt.swapfile = false
 vim.opt.mouse = 'a'
 vim.opt.cmdheight = 1
 vim.opt.encoding = 'UTF-8'
@@ -28,7 +28,7 @@ vim.opt.cinoptions = {'g0', '+2', '(0', 'i0', 't0', ':0'}
 
 -- Folding
 vim.opt.foldmethod = 'syntax'
-vim.opt.nofoldenable = true
+vim.opt.foldenable = false
 
 -- Split
 vim.opt.splitbelow = true
