@@ -6,6 +6,7 @@ alias ip='ip -c'
 alias cb="xclip -selection clipboard"
 alias cat="batcat --pager=never"
 alias genpass="~/.scripts/gen-pass.sh"
+alias python='python3'
 
 # Tmux
 alias tn="tmux new -s $1"
