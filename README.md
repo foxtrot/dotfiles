@@ -1,7 +1,6 @@
 # dotfiles
 
-![kitty](kitty.png)
-![vim](vim.png)
+![desktop](desktop.png)
 
 ## requirements
 ```
