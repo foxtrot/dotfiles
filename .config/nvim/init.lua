@@ -28,7 +28,7 @@
 --
 -- Buffers:
 --    CTRL+Right          Previous Buffer
---    CTRL+Left        	 Next Buffer
+--    CTRL+Left           Next Buffer
 --    Leader+c            Close Buffer
 --    Leader+d            Delete Buffer
 --
